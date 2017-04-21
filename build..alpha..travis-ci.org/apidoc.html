@@ -1,0 +1,788 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/scriby/asyncblock"
+
+    >asyncblock (v2.2.9)</a>
+</h1>
+<h4>A simple and powerful abstraction of node-fibers</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncblock">module asyncblock</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.asyncblock">
+            function <span class="apidocSignatureSpan"></span>asyncblock
+            <span class="apidocSignatureSpan">(fn, done, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.areGeneratorsSupported">
+            function <span class="apidocSignatureSpan">asyncblock.</span>areGeneratorsSupported
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.compileContents">
+            function <span class="apidocSignatureSpan">asyncblock.</span>compileContents
+            <span class="apidocSignatureSpan">(content)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.enableTransform">
+            function <span class="apidocSignatureSpan">asyncblock.</span>enableTransform
+            <span class="apidocSignatureSpan">(mod)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.fullstack">
+            function <span class="apidocSignatureSpan">asyncblock.</span>fullstack
+            <span class="apidocSignatureSpan">(fn, done, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.getCurrentFlow">
+            function <span class="apidocSignatureSpan">asyncblock.</span>getCurrentFlow
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.ifError">
+            function <span class="apidocSignatureSpan">asyncblock.</span>ifError
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.nostack">
+            function <span class="apidocSignatureSpan">asyncblock.</span>nostack
+            <span class="apidocSignatureSpan">(fn, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">asyncblock.</span>flow_fiber</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncblock.flow_fiber">module asyncblock.flow_fiber</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.flow_fiber.FiberFlow">
+            function <span class="apidocSignatureSpan">asyncblock.flow_fiber.</span>FiberFlow
+            <span class="apidocSignatureSpan">(fiber)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncblock.fullstack">module asyncblock.fullstack</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.fullstack.fullstack">
+            function <span class="apidocSignatureSpan">asyncblock.</span>fullstack
+            <span class="apidocSignatureSpan">(fn, done, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.fullstack.areGeneratorsSupported">
+            function <span class="apidocSignatureSpan">asyncblock.fullstack.</span>areGeneratorsSupported
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.fullstack.compileContents">
+            function <span class="apidocSignatureSpan">asyncblock.fullstack.</span>compileContents
+            <span class="apidocSignatureSpan">(content)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.fullstack.enableTransform">
+            function <span class="apidocSignatureSpan">asyncblock.fullstack.</span>enableTransform
+            <span class="apidocSignatureSpan">(mod)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.fullstack.getCurrentFlow">
+            function <span class="apidocSignatureSpan">asyncblock.fullstack.</span>getCurrentFlow
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.fullstack.ifError">
+            function <span class="apidocSignatureSpan">asyncblock.fullstack.</span>ifError
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncblock.fullstack.nostack">
+            function <span class="apidocSignatureSpan">asyncblock.fullstack.</span>nostack
+            <span class="apidocSignatureSpan">(fn, done)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncblock" id="apidoc.module.asyncblock">module asyncblock</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.asyncblock" id="apidoc.element.asyncblock.asyncblock">
+        function <span class="apidocSignatureSpan"></span>asyncblock
+        <span class="apidocSignatureSpan">(fn, done, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asyncblock = function (fn, done, options){
+    //Capture stack trace by default
+    var err = new Error();
+    //Currently not capturing stack trace as it&#x27;s about 60% slower than just making the error (and just takes 1 frame off stack
+trace)
+    //Error.captureStackTrace(err, module.exports);
+
+    if(options == null){
+        options = {};
+    }
+
+    options.stack = err;
+
+    asyncblock(fn, done, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.areGeneratorsSupported" id="apidoc.element.asyncblock.areGeneratorsSupported">
+        function <span class="apidocSignatureSpan">asyncblock.</span>areGeneratorsSupported
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">areGeneratorsSupported = function (){
+    if(_generatorsSupported == null){
+        try{
+            eval(&#x27;(function*(){})&#x27;);
+            _generatorsSupported = true;
+        } catch(e){
+            _generatorsSupported = false;
+        }
+    }
+
+    return _generatorsSupported;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.compileContents" id="apidoc.element.asyncblock.compileContents">
+        function <span class="apidocSignatureSpan">asyncblock.</span>compileContents
+        <span class="apidocSignatureSpan">(content)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compileContents = function (content){
+    //If the content doesn&#x27;t contain &#x22;asyncblock&#x22; or any calls to defer, sync, or future, don&#x27;t process it
+    if(!(/asyncblock/.test(content) &#x26;&#x26; /\)\s*\.\s*defer\s*\(|\)\s*\.\s*sync\s*\(|\)\s*\.\s*future\s*\(/.test(content))){
+        return content;
+    }
+
+    var ast = esprima.parse(content, { range: true, tolerant: true });
+
+    if(ast.errors &#x26;&#x26; ast.errors.length &#x3e; 0){
+        var hasNonReturnError = ast.errors.some(function(error){
+            return error.message.indexOf(&#x27;Illegal return statement&#x27;) &#x3c; 0;
+        });
+
+        //If there&#x27;s a parsing error, don&#x27;t attempt to process the file
+        //Note that we allow for top level return statements as this is often used in conjunction with asyncblock.enableTransform
+        if(hasNonReturnError){
+            return content;
+        }
+    }
+
+    var _asyncblockVarName;
+    var transformations = [];
+
+    //Track locations of asyncblocks
+    recursiveWalk(ast, null, {
+        CallExpression: function(node){
+            if(_asyncblockVarName &#x26;&#x26; node.callee &#x26;&#x26; node.callee.name === _asyncblockVarName){
+                //Make sure the flow variable is defined
+                var func = node.arguments[0];
+                if(func &#x26;&#x26; func.params &#x26;&#x26; func.params.length === 0){
+                    var functionDef = content.substring(func.range[0], func.range[1]);
+                    var parenPos = functionDef.indexOf(&#x27;(&#x27;);
+
+                    transformations.push({ position: func.range[0] + parenPos + 1, insert: &#x27;__asyncblock_flow&#x27; });
+                }
+            }
+
+            if(!_asyncblockVarName &#x26;&#x26; node.callee &#x26;&#x26; node.callee.name === &#x27;require&#x27; &#x26;&#x26;
+              node.arguments &#x26;&#x26; node.arguments[0] &#x26;&#x26; node.arguments[0].value === &#x27;asyncblock&#x27;){
+                var parent = node._parent;
+
+                if(parent.type === &#x27;AssignmentExpression&#x27;){
+                  _asyncblockVarName = parent.left.name;
+                } else if(parent.type === &#x27;VariableDeclarator&#x27;){
+                  _asyncblockVarName = parent.id.name;
+                }
+            }
+        },
+
+        Identifier: function(node){
+          //Make sure it&#x27;s x.sync() instead of x.sync, etc.
+          if(node._parent &#x26;&#x26; node._parent.object &#x26;&#x26; node._parent.object.type === &#x27;CallExpression&#x27;){
+              if(node.name === &#x27;sync&#x27;){
+                  _handleSync(node, content, _asyncblockVarName, transformations);
+              } else if (node.name === &#x27;defer&#x27;){
+                  var greatGrandparent = getGreatGrandparent(node);
+
+                  if(greatGrandparent){
+                      var variableName;
+
+                      if(greatGrandparent.type === &#x27;VariableDeclarator&#x27;){
+                          variableName = greatGrandparent.id.name;
+                      } else if(greatGrandparent.type === &#x27;AssignmentExpression&#x27; &#x26;&#x26; greatGrandparent.left.type === &#x27;Identifier&#x27;){
+                          variableName = greatGrandparent.left.name;
+                      } else {
+                          //defer doesn&#x27;t work here, use sync instead to retain behavior
+                          _handleSync(node, content, _asyncblockVarName, transformations);
+                          return;
+                      }
+
+                      var block = getContainingAyncblock(node, _asyncblockVarName);
+                      if(block){
+                          _handleDeferFuture(node, content, _asyncblockVarName, transformations);
+                          _replaceVariableAccess(block, variableName, transformations);
+                      }
+                  }
+              } else if(node.name === &#x27;future&#x27;){
+                  _handleDeferFuture(node, content, _asyncblockVarName, transformations);
+              }
+          }
+        }
+    });
+
+    //Sort in descending order so we can make updates to the content without throwing off indexes
+    transformations.sort(function(left, right){
+        if(left.position &#x3c; right.position){
+            return -1;
+        } else if(left.position &#x3e; right.position){
+            return 1;
+        } else {
+            if((left.priority || 0) &#x3c; (right.priority || 0)){ ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.enableTransform" id="apidoc.element.asyncblock.enableTransform">
+        function <span class="apidocSignatureSpan">asyncblock.</span>enableTransform
+        <span class="apidocSignatureSpan">(mod)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enableTransform = function (mod){
+    var notEnabled = transform.enableTransform();
+
+    if(notEnabled &#x26;&#x26; mod){
+        delete require.cache[mod.filename];
+        mod.exports = require(mod.filename);
+    }
+
+    return notEnabled;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    //See overview &#x26; API docs for more extensive description of techniques
+});
+```
+
+### With source transformation
+
+```javascript
+//asyncblock.<span class="apidocCodeKeywordSpan">enableTransform</span>() must be called before requiring modules using this syntax
+.
+//See overview / API for more details
+
+var ab = require(&#x27;asyncblock&#x27;);
+
+if (ab.enableTransform(module)) { return; }
+
+ab(function(flow) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.fullstack" id="apidoc.element.asyncblock.fullstack">
+        function <span class="apidocSignatureSpan">asyncblock.</span>fullstack
+        <span class="apidocSignatureSpan">(fn, done, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fullstack = function (fn, done, options){
+    //Capture stack trace by default
+    var err = new Error();
+    //Currently not capturing stack trace as it&#x27;s about 60% slower than just making the error (and just takes 1 frame off stack
+trace)
+    //Error.captureStackTrace(err, module.exports);
+
+    if(options == null){
+        options = {};
+    }
+
+    options.stack = err;
+
+    asyncblock(fn, done, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.getCurrentFlow" id="apidoc.element.asyncblock.getCurrentFlow">
+        function <span class="apidocSignatureSpan">asyncblock.</span>getCurrentFlow
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCurrentFlow = function (){
+    var currFiber = getFibers().current;
+    if(currFiber){
+        var currFlow = currFiber._asyncblock_flow;
+        currFiber = null;
+
+        return currFlow;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.ifError" id="apidoc.element.asyncblock.ifError">
+        function <span class="apidocSignatureSpan">asyncblock.</span>ifError
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ifError = function (callback){
+    return function(err){
+        if(err != null){
+            callback.apply(this, arguments);
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.nostack" id="apidoc.element.asyncblock.nostack">
+        function <span class="apidocSignatureSpan">asyncblock.</span>nostack
+        <span class="apidocSignatureSpan">(fn, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nostack = function (fn, done){
+    asyncblock(fn, done);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncblock.flow_fiber" id="apidoc.module.asyncblock.flow_fiber">module asyncblock.flow_fiber</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.flow_fiber.FiberFlow" id="apidoc.element.asyncblock.flow_fiber.FiberFlow">
+        function <span class="apidocSignatureSpan">asyncblock.flow_fiber.</span>FiberFlow
+        <span class="apidocSignatureSpan">(fiber)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">FiberFlow = function (fiber){
+    this._fiber = fiber;
+
+    Flow.call(this, fiber);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncblock.fullstack" id="apidoc.module.asyncblock.fullstack">module asyncblock.fullstack</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.fullstack.fullstack" id="apidoc.element.asyncblock.fullstack.fullstack">
+        function <span class="apidocSignatureSpan">asyncblock.</span>fullstack
+        <span class="apidocSignatureSpan">(fn, done, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fullstack = function (fn, done, options){
+    //Capture stack trace by default
+    var err = new Error();
+    //Currently not capturing stack trace as it&#x27;s about 60% slower than just making the error (and just takes 1 frame off stack
+trace)
+    //Error.captureStackTrace(err, module.exports);
+
+    if(options == null){
+        options = {};
+    }
+
+    options.stack = err;
+
+    asyncblock(fn, done, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.fullstack.areGeneratorsSupported" id="apidoc.element.asyncblock.fullstack.areGeneratorsSupported">
+        function <span class="apidocSignatureSpan">asyncblock.fullstack.</span>areGeneratorsSupported
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">areGeneratorsSupported = function (){
+    if(_generatorsSupported == null){
+        try{
+            eval(&#x27;(function*(){})&#x27;);
+            _generatorsSupported = true;
+        } catch(e){
+            _generatorsSupported = false;
+        }
+    }
+
+    return _generatorsSupported;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.fullstack.compileContents" id="apidoc.element.asyncblock.fullstack.compileContents">
+        function <span class="apidocSignatureSpan">asyncblock.fullstack.</span>compileContents
+        <span class="apidocSignatureSpan">(content)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compileContents = function (content){
+    //If the content doesn&#x27;t contain &#x22;asyncblock&#x22; or any calls to defer, sync, or future, don&#x27;t process it
+    if(!(/asyncblock/.test(content) &#x26;&#x26; /\)\s*\.\s*defer\s*\(|\)\s*\.\s*sync\s*\(|\)\s*\.\s*future\s*\(/.test(content))){
+        return content;
+    }
+
+    var ast = esprima.parse(content, { range: true, tolerant: true });
+
+    if(ast.errors &#x26;&#x26; ast.errors.length &#x3e; 0){
+        var hasNonReturnError = ast.errors.some(function(error){
+            return error.message.indexOf(&#x27;Illegal return statement&#x27;) &#x3c; 0;
+        });
+
+        //If there&#x27;s a parsing error, don&#x27;t attempt to process the file
+        //Note that we allow for top level return statements as this is often used in conjunction with asyncblock.enableTransform
+        if(hasNonReturnError){
+            return content;
+        }
+    }
+
+    var _asyncblockVarName;
+    var transformations = [];
+
+    //Track locations of asyncblocks
+    recursiveWalk(ast, null, {
+        CallExpression: function(node){
+            if(_asyncblockVarName &#x26;&#x26; node.callee &#x26;&#x26; node.callee.name === _asyncblockVarName){
+                //Make sure the flow variable is defined
+                var func = node.arguments[0];
+                if(func &#x26;&#x26; func.params &#x26;&#x26; func.params.length === 0){
+                    var functionDef = content.substring(func.range[0], func.range[1]);
+                    var parenPos = functionDef.indexOf(&#x27;(&#x27;);
+
+                    transformations.push({ position: func.range[0] + parenPos + 1, insert: &#x27;__asyncblock_flow&#x27; });
+                }
+            }
+
+            if(!_asyncblockVarName &#x26;&#x26; node.callee &#x26;&#x26; node.callee.name === &#x27;require&#x27; &#x26;&#x26;
+              node.arguments &#x26;&#x26; node.arguments[0] &#x26;&#x26; node.arguments[0].value === &#x27;asyncblock&#x27;){
+                var parent = node._parent;
+
+                if(parent.type === &#x27;AssignmentExpression&#x27;){
+                  _asyncblockVarName = parent.left.name;
+                } else if(parent.type === &#x27;VariableDeclarator&#x27;){
+                  _asyncblockVarName = parent.id.name;
+                }
+            }
+        },
+
+        Identifier: function(node){
+          //Make sure it&#x27;s x.sync() instead of x.sync, etc.
+          if(node._parent &#x26;&#x26; node._parent.object &#x26;&#x26; node._parent.object.type === &#x27;CallExpression&#x27;){
+              if(node.name === &#x27;sync&#x27;){
+                  _handleSync(node, content, _asyncblockVarName, transformations);
+              } else if (node.name === &#x27;defer&#x27;){
+                  var greatGrandparent = getGreatGrandparent(node);
+
+                  if(greatGrandparent){
+                      var variableName;
+
+                      if(greatGrandparent.type === &#x27;VariableDeclarator&#x27;){
+                          variableName = greatGrandparent.id.name;
+                      } else if(greatGrandparent.type === &#x27;AssignmentExpression&#x27; &#x26;&#x26; greatGrandparent.left.type === &#x27;Identifier&#x27;){
+                          variableName = greatGrandparent.left.name;
+                      } else {
+                          //defer doesn&#x27;t work here, use sync instead to retain behavior
+                          _handleSync(node, content, _asyncblockVarName, transformations);
+                          return;
+                      }
+
+                      var block = getContainingAyncblock(node, _asyncblockVarName);
+                      if(block){
+                          _handleDeferFuture(node, content, _asyncblockVarName, transformations);
+                          _replaceVariableAccess(block, variableName, transformations);
+                      }
+                  }
+              } else if(node.name === &#x27;future&#x27;){
+                  _handleDeferFuture(node, content, _asyncblockVarName, transformations);
+              }
+          }
+        }
+    });
+
+    //Sort in descending order so we can make updates to the content without throwing off indexes
+    transformations.sort(function(left, right){
+        if(left.position &#x3c; right.position){
+            return -1;
+        } else if(left.position &#x3e; right.position){
+            return 1;
+        } else {
+            if((left.priority || 0) &#x3c; (right.priority || 0)){ ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.fullstack.enableTransform" id="apidoc.element.asyncblock.fullstack.enableTransform">
+        function <span class="apidocSignatureSpan">asyncblock.fullstack.</span>enableTransform
+        <span class="apidocSignatureSpan">(mod)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enableTransform = function (mod){
+    var notEnabled = transform.enableTransform();
+
+    if(notEnabled &#x26;&#x26; mod){
+        delete require.cache[mod.filename];
+        mod.exports = require(mod.filename);
+    }
+
+    return notEnabled;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    //See overview &#x26; API docs for more extensive description of techniques
+});
+```
+
+### With source transformation
+
+```javascript
+//asyncblock.<span class="apidocCodeKeywordSpan">enableTransform</span>() must be called before requiring modules using this syntax
+.
+//See overview / API for more details
+
+var ab = require(&#x27;asyncblock&#x27;);
+
+if (ab.enableTransform(module)) { return; }
+
+ab(function(flow) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.fullstack.getCurrentFlow" id="apidoc.element.asyncblock.fullstack.getCurrentFlow">
+        function <span class="apidocSignatureSpan">asyncblock.fullstack.</span>getCurrentFlow
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCurrentFlow = function (){
+    var currFiber = getFibers().current;
+    if(currFiber){
+        var currFlow = currFiber._asyncblock_flow;
+        currFiber = null;
+
+        return currFlow;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.fullstack.ifError" id="apidoc.element.asyncblock.fullstack.ifError">
+        function <span class="apidocSignatureSpan">asyncblock.fullstack.</span>ifError
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ifError = function (callback){
+    return function(err){
+        if(err != null){
+            callback.apply(this, arguments);
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncblock.fullstack.nostack" id="apidoc.element.asyncblock.fullstack.nostack">
+        function <span class="apidocSignatureSpan">asyncblock.fullstack.</span>nostack
+        <span class="apidocSignatureSpan">(fn, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nostack = function (fn, done){
+    asyncblock(fn, done);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
